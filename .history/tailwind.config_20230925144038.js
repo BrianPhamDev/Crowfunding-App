@@ -27,8 +27,6 @@ module.exports = {
           secondary: "rgba(28, 28, 36, 1)",
           soft: "rgba(34, 34, 44, 1)",
           softer: "rgba(36, 36, 44, 1)",
-          stroke: "rgba(58, 58, 67, 1)",
-          red: "rgba(66, 44, 50, 1)",
         },
         text: {
           1: "rgba(58, 58, 67, 1)",

@@ -17,18 +17,9 @@ module.exports = {
         },
         secondary: {
           color: "rgba(111, 73, 253, 1)",
-          20: "rgba(140, 109, 253, 1)",
-          40: "rgba(169, 146, 254, 1)",
-          60: "rgba(197, 182, 254, 1)",
-          80: "rgba(226, 219, 255, 1)",
         },
         dark: {
           color: "rgba(19, 19, 26, 1)",
-          secondary: "rgba(28, 28, 36, 1)",
-          soft: "rgba(34, 34, 44, 1)",
-          softer: "rgba(36, 36, 44, 1)",
-          stroke: "rgba(58, 58, 67, 1)",
-          red: "rgba(66, 44, 50, 1)",
         },
         text: {
           1: "rgba(58, 58, 67, 1)",
