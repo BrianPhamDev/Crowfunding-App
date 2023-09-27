@@ -1,9 +1,19 @@
 import React from "react";
 import { useController } from "react-hook-form";
 import PropTypes from "prop-types";
+import { withErrorBoundary } from "react-error-boundary";
+import ErrorComponent from "components/molecules/ErrorComponent";
 
 const Input = (props) => {
-  const { control, name, type = "text", ...rest } = props;
+  const {
+    control,
+    name,
+    type = "text",
+    error = "",
+    placeholder,
+    children,
+    ...rest
+  } = props;
   const { field } = useController({ control, name, defaultValue: "" });
 
   return (
@@ -11,10 +21,23 @@ const Input = (props) => {
       <input
         id={name}
         type={type}
-        className="w-full px-6 py-4 text-sm font-medium border border-whitsh-strock text-1 placeholder:text-4"
+        className={`w-full px-6 py-4 text-sm font-medium border  text-1 placeholder:text-4 ${
+          error.length > 0 ? `border-error` : `border-whitsh-strock`
+        } ${children ? "pr-16" : ""}`}
+        placeholder={error.length > 0 ? "" : placeholder}
         {...field}
         {...rest}
       />
+      {error.length > 0 && (
+        <span className="absolute right-0 text-sm font-medium -translate-y-1/2 pointer-events-none left-6 top-1/2 text-error error-input">
+          {error}
+        </span>
+      )}
+      {children && (
+        <div className="absolute -translate-y-1/2 cursor-pointer select-none top-1/2 right-6">
+          {children}
+        </div>
+      )}
     </div>
   );
 };
@@ -22,7 +45,10 @@ const Input = (props) => {
 Input.propTypes = {
   name: PropTypes.string.isRequired,
   control: PropTypes.any.isRequired,
+  error: PropTypes.string,
   type: PropTypes.string,
 };
 
-export default Input;
+export default withErrorBoundary(Input, {
+  FallbackComponent: ErrorComponent,
+});

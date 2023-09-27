@@ -11,7 +11,7 @@ const LayoutAuthentication = (props) => {
       <img
         src="/ellipse-background.png"
         alt="bg-ellipse"
-        className="absolute bottom-0 left-0 right-0 pointer-events-none z-[-1]"
+        className="absolute bottom-0 right-0 pointer-events-none z-[-1]"
       />
       <Link to="/" className="inline-block mb-16 sm:mb-5">
         <img src="/logo.svg" alt="logo-brand" />

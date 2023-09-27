@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      "2xl": "1440px",
+      // "2xl": "1440px",
     },
     extend: {
       fontFamily: {
@@ -46,6 +46,7 @@ module.exports = {
           strock: "rgba(241, 241, 243, 1)",
           lite: "rgba(252, 252, 253, 1)",
         },
+        error: "rgba(235, 87, 87, 1)",
       },
     },
   },

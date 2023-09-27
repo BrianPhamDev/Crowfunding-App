@@ -6,19 +6,43 @@ import Label from "components/atoms/label/Label";
 import { Input } from "components/atoms/input";
 import FormField from "components/molecules/FormField";
 import { Button } from "components/atoms/button";
-// import Button from "components/atoms/button/Button";
+import { Checkbox } from "components/atoms/checkbox";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { IconEye } from "components/icons";
+import useToggleValue from "hooks/useToggle";
 
 const SignUpPage = () => {
+  const schema = yup.object({
+    name: yup.string().required("Please enter your full name"),
+    password: yup
+      .string()
+      .required("Please enter your password")
+      .min(8, "Password must have at least 8 characters"),
+    email: yup
+      .string()
+      .email("Invalid email address")
+      .required("Please enter your email"),
+  });
   const {
     handleSubmit,
     control,
-    formState: { isValid, isSubmitting },
+    formState: { errors },
   } = useForm({
     defaultValues: {},
+    resolver: yupResolver(schema),
+    mode: "onSubmit",
   });
+
   const handleSignUp = (values) => {
     console.log(values);
   };
+
+  const { value: showPassword, handleToggle: handleShowPassword } =
+    useToggleValue();
+  const { value: acceptTerm, handleToggle: handleToggleTerm } =
+    useToggleValue();
+
   return (
     <div>
       <LayoutAuthentication heading="Sign Up">
@@ -35,7 +59,7 @@ const SignUpPage = () => {
           <img src="/google-logo.svg" alt="" />
           <p className="text-base text-2">Sign up with google</p>
         </button>
-        <p className="text-sm sm:text-xs font-normal text-center text-2 p-[10px] sm:p-[5px]">
+        <p className="flex-1 text-xs lg:text-sm text-center text-2 p-[10px] sm:p-[5px]">
           Or sign up with email
         </p>
         <form
@@ -48,6 +72,7 @@ const SignUpPage = () => {
               control={control}
               name="fullname"
               placeholder="Enter your full name"
+              error={errors.name?.message}
             ></Input>
           </FormField>
           <FormField>
@@ -57,6 +82,7 @@ const SignUpPage = () => {
               name="email"
               placeholder="Enter your email"
               type="email"
+              error={errors?.email?.message}
             ></Input>
           </FormField>
           <FormField>
@@ -65,11 +91,22 @@ const SignUpPage = () => {
               control={control}
               name="password"
               placeholder="Enter your password"
-              type="password"
-            ></Input>
-            <div className="flex items-start gap-5 my-5">
-              <span className="inline-block w-5 h-5 border rounded-md border-1"></span>
-              <p className="flex-1 text-sm font-normal text-2">
+              type={showPassword ? "text" : "password"}
+              error={errors.password?.message}
+            >
+              <IconEye
+                open={showPassword}
+                onClick={handleShowPassword}
+                toggle={showPassword}
+              ></IconEye>
+            </Input>
+            <Checkbox
+              name="term"
+              checked={acceptTerm}
+              onClick={handleToggleTerm}
+              className="my-5"
+            >
+              <p className="text-xs font-normal sm:text-primary-color text-2">
                 I agree to the{" "}
                 <span className="underline cursor-pointer text-secondary-color">
                   Tearms of Use
@@ -79,7 +116,7 @@ const SignUpPage = () => {
                   Privacy policy
                 </span>
               </p>
-            </div>
+            </Checkbox>
             <Button className="w-full" type="submit">
               Create my account
             </Button>
