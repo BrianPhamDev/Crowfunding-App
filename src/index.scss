@@ -38,4 +38,8 @@
   .shadow-nav {
     box-shadow: 10px 10px 20px 0px rgba(218, 213, 213, 0.15);
   }
+
+  .active {
+    @apply text-primary-color bg-primary-extra;
+  }
 }

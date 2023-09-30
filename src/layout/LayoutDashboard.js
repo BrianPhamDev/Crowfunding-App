@@ -7,7 +7,7 @@ const LayoutDashboard = (props) => {
   return (
     <div className="p-10 bg-whitsh-lite">
       <DashboardTopbar></DashboardTopbar>
-      <div className="">
+      <div className="flex-row items-start gap-10">
         <DashboardSidebar></DashboardSidebar>
         <div className="">{children}</div>
       </div>
