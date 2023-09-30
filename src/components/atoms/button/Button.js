@@ -17,7 +17,7 @@ const Button = (props) => {
     <button
       type={type}
       className={classNames(
-        "flex items-center justify-center p-3 text-base font-semibold text-white rounded-xl bg-primary-color min-h-[56px]",
+        "flex items-center justify-center p-3 text-base font-semibold text-white rounded-xl bg-primary-color ",
         className,
         !!isLoading ? "opacity-50 pointer-events-none" : ""
       )}
