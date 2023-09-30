@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Label from "components/atoms/label/Label";
 import { Input } from "components/atoms/input";
 import FormField from "components/molecules/FormField";
-import { Button } from "components/atoms/button";
+import { Button, ButtonGoogle } from "components/atoms/button";
 import { Checkbox } from "components/atoms/checkbox";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -46,7 +46,7 @@ const SignUpPage = () => {
   return (
     <div>
       <LayoutAuthentication heading="Sign Up">
-        <p className="mb-5 text-sm text-3 sm:mb-6">
+        <p className="mb-6 text-xs sm:text-sm text-3 sm:mb-5">
           Already have an account?{" "}
           <Link
             to="/sign-in"
@@ -55,16 +55,13 @@ const SignUpPage = () => {
             Sign in
           </Link>
         </p>
-        <button className="w-full max-w-[430px] h-[52px] gap-[10px] p-3 flex flex-row items-center justify-center outline outline-whitsh-strock outline-1 rounded-xl">
-          <img src="/google-logo.svg" alt="" />
-          <p className="text-base text-2">Sign up with google</p>
-        </button>
-        <p className="flex-1 text-xs lg:text-sm text-center text-2 p-[10px] sm:p-[5px]">
+        <ButtonGoogle></ButtonGoogle>
+        <p className="flex-1 text-xs sm:text-sm text-center text-2 p-[10px] sm:p-[5px] dark:text-white">
           Or sign up with email
         </p>
         <form
           onSubmit={handleSubmit(handleSignUp)}
-          className="flex flex-col gap-[10px] w-full"
+          className="flex flex-col gap-[15px] sm:gap-[20px] w-full"
         >
           <FormField>
             <Label htmlFor="fullname">Full Name *</Label>
@@ -100,27 +97,27 @@ const SignUpPage = () => {
                 toggle={showPassword}
               ></IconEye>
             </Input>
-            <Checkbox
-              name="term"
-              checked={acceptTerm}
-              onClick={handleToggleTerm}
-              className="my-5"
-            >
-              <p className="text-xs font-normal sm:text-primary-color text-2">
-                I agree to the{" "}
-                <span className="underline cursor-pointer text-secondary-color">
-                  Tearms of Use
-                </span>{" "}
-                and have read and understand the{" "}
-                <span className="underline cursor-pointer text-secondary-color">
-                  Privacy policy
-                </span>
-              </p>
-            </Checkbox>
-            <Button className="w-full" type="submit">
-              Create my account
-            </Button>
           </FormField>
+          <Checkbox
+            name="term"
+            checked={acceptTerm}
+            onClick={handleToggleTerm}
+            className="my-5"
+          >
+            <p className="text-xs font-normal sm:text-sm text-2 dark:text-3">
+              I agree to the{" "}
+              <span className="underline cursor-pointer text-secondary-color">
+                Tearms of Use
+              </span>{" "}
+              and have read and understand the{" "}
+              <span className="underline cursor-pointer text-secondary-color">
+                Privacy policy
+              </span>
+            </p>
+          </Checkbox>
+          <Button className="w-full" type="submit">
+            Create my account
+          </Button>
         </form>
       </LayoutAuthentication>
     </div>

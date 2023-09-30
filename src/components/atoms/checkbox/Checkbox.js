@@ -24,7 +24,7 @@ const Checkbox = (props) => {
           name={name}
           onChange={() => {}}
         />
-        <span>
+        <span className={`${checked ? "" : `opacity-0 invisible`}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,7 +41,7 @@ const Checkbox = (props) => {
           </svg>
         </span>
       </div>
-      <label className="cursor-pointer" onClick={onClick}>
+      <label className="flex-1 cursor-pointer" onClick={onClick}>
         {children}
       </label>
     </div>

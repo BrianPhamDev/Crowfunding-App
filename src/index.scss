@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-primary text-base leading-6;
+    @apply font-primary text-base leading-6 font-normal;
   }
   input {
     @apply outline-primary-color;
@@ -24,6 +24,6 @@
 
 @layer utilities {
   input:focus + .error-input {
-    display: none;
+    @apply hidden;
   }
 }

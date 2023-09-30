@@ -2,9 +2,6 @@ module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens: {
-      // "2xl": "1440px",
-    },
     extend: {
       fontFamily: {
         primary: ["Epilogue", "sans-serif;"],
@@ -26,7 +23,7 @@ module.exports = {
           80: "rgba(226, 219, 255, 1)",
         },
         dark: {
-          color: "rgba(19, 19, 26, 1)",
+          bg: "rgba(19, 19, 26, 1)",
           secondary: "rgba(28, 28, 36, 1)",
           soft: "rgba(34, 34, 44, 1)",
           softer: "rgba(36, 36, 44, 1)",
