@@ -4,7 +4,10 @@
 
 @layer base {
   body {
-    @apply font-primary text-base leading-6 font-normal;
+    @apply font-primary text-1 text-base leading-6 font-normal max-w-[1440px];
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   input {
     @apply outline-primary-color;

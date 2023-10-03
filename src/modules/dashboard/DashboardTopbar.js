@@ -5,7 +5,7 @@ import DashboardFund from "./DashboardFund";
 
 const DashboardTopbar = () => {
   return (
-    <div className="h-[52px] flex-row w-full items-center justify-between mb-8 md:ml-3">
+    <div className="h-[52px] flex-row w-full items-center justify-between mb-8 md:pl-3">
       <div className="flex-row flex-1 content-left gap-x-[40px]">
         <img src="/logo.svg" alt="" className="" />
         <DashboardSearch className="max-w-[436px] w-full"></DashboardSearch>

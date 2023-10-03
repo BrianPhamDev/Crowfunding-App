@@ -1,15 +1,16 @@
+import Overlay from "components/atoms/Overlay";
 import DashboardSidebar from "modules/dashboard/DashboardSidebar";
 import DashboardTopbar from "modules/dashboard/DashboardTopbar";
-import React from "react";
 
 const LayoutDashboard = (props) => {
   const { children } = props;
   return (
-    <div className="p-10 bg-whitsh-lite">
+    <div className="w-full p-10 bg-whitsh-lite">
+      <Overlay></Overlay>
       <DashboardTopbar></DashboardTopbar>
       <div className="flex-row items-start gap-10">
         <DashboardSidebar></DashboardSidebar>
-        <div className="">{children}</div>
+        <div className="flex-1">{children}</div>
       </div>
     </div>
   );

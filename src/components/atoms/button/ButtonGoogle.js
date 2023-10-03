@@ -20,5 +20,5 @@ ButtonGoogle.propTypes = {
   logo: PropTypes.string,
 };
 export default withErrorBoundary(ButtonGoogle, {
-  FallbackComponent: <ErrorComponent></ErrorComponent>,
+  FallbackComponent: ErrorComponent,
 });
