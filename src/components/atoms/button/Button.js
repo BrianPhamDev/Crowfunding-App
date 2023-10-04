@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "utils/classNames";
+import { Link } from "react-router-dom";
 
 const Button = (props) => {
   const {
@@ -8,16 +9,45 @@ const Button = (props) => {
     children,
     className = "",
     isLoading = false,
+    kind = "primary",
     ...rest
   } = props;
 
   const child = !!isLoading ? <div className="spinner"></div> : children;
 
+  let defaultClassName =
+    "flex items-center justify-center p-3 text-base font-semibold rounded-xl";
+
+  switch (kind) {
+    case "primary":
+      defaultClassName = defaultClassName + "text-white bg-primary-color";
+
+      break;
+    case "secondary":
+      defaultClassName =
+        defaultClassName + " text-secondary-color bg-secondary-80";
+      break;
+    case "ghost":
+      defaultClassName =
+        defaultClassName +
+        " text-secondary-color bg-secondary-color/10" +
+        " w-full px-7 py-[14px]";
+      break;
+    default:
+      break;
+  }
+  if (rest.href)
+    return (
+      <Link to={rest.href} className={classNames(defaultClassName, className)}>
+        {child}
+      </Link>
+    );
+
   return (
     <button
       type={type}
       className={classNames(
-        "flex items-center justify-center p-3 text-base font-semibold text-white rounded-xl bg-primary-color ",
+        defaultClassName,
         className,
         !!isLoading ? "opacity-50 pointer-events-none" : ""
       )}
@@ -32,6 +62,8 @@ Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   isLoading: PropTypes.bool,
+  href: PropTypes.string,
+  kind: PropTypes.oneOf(["primary", "secondary", "ghost"]),
 };
 
 export default Button;
