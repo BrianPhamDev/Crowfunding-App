@@ -46,3 +46,17 @@
     @apply text-primary-color bg-primary-extra;
   }
 }
+
+.quill {
+  @apply border border-whitsh-strock rounded-lg px-4 py-6 flex items-center flex-col md:h-[420px] h-[238px];
+
+  .ql-toolbar.ql-snow {
+    @apply bg-4/10 border-none inline-block rounded-lg py-3 px-5;
+  }
+  .ql-container.ql-snow {
+    @apply w-full border-none font-primary text-sm text-1 pt-6;
+  }
+  .ql-editor.ql-blank::before {
+    @apply text-sm text-4 font-normal not-italic;
+  }
+}

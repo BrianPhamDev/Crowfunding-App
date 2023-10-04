@@ -18,7 +18,7 @@ const DashboardTopbar = () => {
         <DashboardFund></DashboardFund>
         <Button
           className="w-full max-w-[191px] rounded-lg font-semibold text-white p-3 bg-secondary-20"
-          href="/campaign"
+          href="/start-campaign"
         >
           Start a campaign
         </Button>
