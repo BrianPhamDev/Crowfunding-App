@@ -2,14 +2,13 @@ import { Button } from "components/atoms/button";
 import { IconPlus } from "components/icons";
 import Heading from "components/molecules/Heading";
 import LayoutCampaignGrid from "layout/LayoutCampaignGrid";
-import LayoutDashboard from "layout/LayoutDashboard";
 import CampaignFeatured from "modules/campaign/CampaignFeatured";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const CampaignPage = () => {
   return (
-    <LayoutDashboard>
+    <>
       <div className="flex items-center justify-between w-full mb-10 bg-white rounded-3xl max-h-[154px] py-8 px-10">
         <div className="flex flex-row gap-6">
           <div className="w-[40px] h-[40px] md:w-[54px] md:h-[54px]  bg-secondary-40 rounded-full flex items-center justify-center text-white">
@@ -46,7 +45,7 @@ const CampaignPage = () => {
       <Button kind="ghost" className="max-w-[200px] mx-auto">
         See more
       </Button>
-    </LayoutDashboard>
+    </>
   );
 };
 

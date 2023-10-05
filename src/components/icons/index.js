@@ -12,3 +12,4 @@ export const { default: IconPayment } = require("./IconPayment");
 export const { default: IconFolder } = require("./IconFolder");
 export const { default: IconClose } = require("./IconClose");
 export const { default: IconPlus } = require("./IconPlus");
+export const { default: IconMoney } = require("./IconMoney");

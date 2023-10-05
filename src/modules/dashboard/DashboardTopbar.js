@@ -17,7 +17,7 @@ const DashboardTopbar = () => {
       <div className="flex-row justify-end flex-1 h-full gap-10 content-right">
         <DashboardFund></DashboardFund>
         <Button
-          className="w-full max-w-[191px] rounded-lg font-semibold text-white p-3 bg-secondary-20"
+          className="font-semibold text-white rounded-lg w-fit bg-secondary-20"
           href="/start-campaign"
         >
           Start a campaign

@@ -16,11 +16,11 @@ const Button = (props) => {
   const child = !!isLoading ? <div className="spinner"></div> : children;
 
   let defaultClassName =
-    "flex items-center justify-center p-3 text-base font-semibold rounded-xl";
+    "flex items-center justify-center px-10 py-4 text-base font-semibold rounded-xl";
 
   switch (kind) {
     case "primary":
-      defaultClassName = defaultClassName + "text-white bg-primary-color";
+      defaultClassName = defaultClassName + " text-white bg-primary-color";
 
       break;
     case "secondary":

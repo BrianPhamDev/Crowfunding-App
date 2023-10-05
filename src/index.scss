@@ -60,3 +60,8 @@
     @apply text-sm text-4 font-normal not-italic;
   }
 }
+
+.overlay-banner {
+  background: linear-gradient(179deg, rgba(32, 18, 63, 0) -7.14%, #000 87.01%);
+  opacity: 0.4;
+}
