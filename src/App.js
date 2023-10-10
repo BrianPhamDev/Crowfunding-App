@@ -2,6 +2,8 @@ import LayoutDashboard from "layout/LayoutDashboard.js";
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Modal from "react-modal";
+import PaymentPage from "pages/PaymentPage.js";
+import WithdrawPage from "pages/WithdrawPage.js";
 
 const SignUpPage = lazy(() => import("./pages/SignUpPage.js"));
 const SignInPage = lazy(() => import("./pages/SignInPage.js"));
@@ -42,6 +44,11 @@ function App() {
             path="/campaign/:slug"
             element={<CampaignView></CampaignView>}
           ></Route>
+          <Route
+            path="/withdraw"
+            element={<WithdrawPage></WithdrawPage>}
+          ></Route>
+          <Route path="/payment" element={<PaymentPage></PaymentPage>}></Route>
         </Route>
 
         <Route path="/sign-up" element={<SignUpPage></SignUpPage>}></Route>
