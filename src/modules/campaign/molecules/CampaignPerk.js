@@ -13,32 +13,32 @@ const CampaignPerk = ({ showButton = false }) => {
           alt=""
         />
         <div className="p-5">
-          <span className="inline-block px-3 py-1 mb-5 text-xs font-medium text-white rounded-sm bg-secondary">
+          <span className="inline-block px-3 py-1 mb-5 text-xs font-medium text-white rounded-sm bg-secondary-20">
             Featured
           </span>
           <CampaignTitle className="mb-1 text-xl font-semibold">
             Special One Camera
           </CampaignTitle>
           <div className="flex items-center mb-4 gap-x-3">
-            <span className="text-xl font-bold text-text1">$2,724 USD</span>{" "}
+            <span className="text-xl font-bold text-1">$2,724 USD</span>{" "}
             <span className="text-sm font-medium line-through text-error">
               $1,504 USD
             </span>
             <span className="text-sm font-medium text-error">(12% OFF)</span>
           </div>
           <div className="flex flex-col mb-4 gap-y-1">
-            <strong>Estimated Shipping</strong>{" "}
+            <span className="font-medium ">Estimated Shipping</span>{" "}
             <span className="text-text2">October 2022</span>
           </div>
-          <p className="mb-4 text-text2">
-            <strong className="text-text1">05</strong> claimed
+          <p className="mb-4 text-2">
+            <strong className="text-1">05</strong> claimed
           </p>
-          <p className="text-text2">Ships worldwide</p>
+          <p className="text-2">Ships worldwide</p>
         </div>
       </div>
       {showButton && (
         <div className="mt-6">
-          <Button className="w-full text-white bg-secondary">
+          <Button className="w-full text-white bg-secondary-20">
             Get this perk
           </Button>
         </div>

@@ -65,3 +65,15 @@
   background: linear-gradient(179deg, rgba(32, 18, 63, 0) -7.14%, #000 87.01%);
   opacity: 0.4;
 }
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
