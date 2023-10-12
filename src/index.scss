@@ -77,3 +77,11 @@
 .scroll-hidden::-webkit-scrollbar {
   display: none;
 }
+
+.react-date-picker {
+  @apply w-full px-6 py-4 text-sm rounded-lg font-medium border text-1 placeholder:text-4 dark:border-dark-stroke dark:bg-dark-bg dark:text-white dark:placeholder:text-2 max-h-[54px];
+
+  .react-date-picker__wrapper {
+    @apply border-none flex flex-row items-center justify-between;
+  }
+}

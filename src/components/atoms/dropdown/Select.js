@@ -1,7 +1,7 @@
 import React from "react";
 import { useDropdown } from "./dropdown-context";
 
-const Select = ({ placeholder = "", className }) => {
+const Select = ({ placeholder = "", className, children }) => {
   const { handleToggleDropdown, show } = useDropdown();
   return (
     <>
@@ -9,8 +9,13 @@ const Select = ({ placeholder = "", className }) => {
         className={`flex items-center justify-between p-5 cursor-pointer text-sm rounded-lg h-[54px] font-medium border text-4 placeholder:text-4 dark:border-dark-stroke dark:bg-dark-bg dark:text-white dark:placeholder:text-2 ${className}`}
         onClick={handleToggleDropdown}
       >
-        <span>{placeholder}</span>
+        {/* <span>{placeholder}</span> */}
 
+        {children ? (
+          <span className="capitalize text-1">{children}</span>
+        ) : (
+          <span>{placeholder}</span>
+        )}
         <span>
           {show ? (
             <svg
