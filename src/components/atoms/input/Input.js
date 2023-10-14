@@ -18,7 +18,7 @@ const Input = (props) => {
   const { field } = useController({ control, name, defaultValue: "" });
 
   return (
-    <div className="w-full">
+    <div className="relative w-full">
       <input
         id={name}
         type={type}

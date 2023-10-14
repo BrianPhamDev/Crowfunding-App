@@ -11,6 +11,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { IconEye } from "components/icons";
 import useToggleValue from "hooks/useToggle";
+import { useDispatch } from "react-redux";
+import { authRegister } from "store/auth/auth-slice";
 
 const SignUpPage = () => {
   const schema = yup.object({
@@ -28,15 +30,23 @@ const SignUpPage = () => {
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm({
     defaultValues: {},
     resolver: yupResolver(schema),
     mode: "onSubmit",
   });
 
-  const handleSignUp = (values) => {
-    console.log(values);
+  const handleSignUp = async (values) => {
+    try {
+      dispatch(authRegister(values));
+      reset({});
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  const dispatch = useDispatch();
 
   const { value: showPassword, handleToggle: handleShowPassword } =
     useToggleValue();
@@ -67,7 +77,7 @@ const SignUpPage = () => {
             <Label htmlFor="fullname">Full Name *</Label>
             <Input
               control={control}
-              name="fullname"
+              name="name"
               placeholder="Enter your full name"
               error={errors.name?.message}
             ></Input>
